@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MiniBatch Config</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="tagLabel">
+       <property name="text">
+        <string>Tag</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="tagLineEdit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="typeLabel">
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="typeComboBox"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="fromLabel">
+       <property name="text">
+        <string>From</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QTabWidget" name="fromTabWidget"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="shapeLabel">
+       <property name="text">
+        <string>Shape</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="shapeLayout"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="normalizeLabel">
+       <property name="text">
+        <string>Normalize</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QCheckBox" name="normalizeCheckBox">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="rangeLabel">
+       <property name="text">
+        <string>Range</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <layout class="QHBoxLayout" name="rangeLayout">
+       <item>
+        <widget class="QGroupBox" name="rangeMinGroupBox">
+         <property name="title">
+          <string>min</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="rangeMinLineEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="rangeMaxGroupBox">
+         <property name="title">
+          <string>max</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="rangeMaxLineEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="frameidLabel">
+       <property name="text">
+        <string>Frame ID</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="frameidComboBox"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelLabel">
+       <property name="text">
+        <string>Label</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="labelComboBox"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="text">
+        <string>&amp;OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

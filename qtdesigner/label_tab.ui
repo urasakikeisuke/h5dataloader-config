@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>757</width>
+    <height>609</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <layout class="QVBoxLayout" name="srcLayout">
+       <item>
+        <layout class="QHBoxLayout" name="srcHeaderLayout" stretch="0,1">
+         <item>
+          <widget class="QLabel" name="srcLabel">
+           <property name="text">
+            <string>Source</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="srcComboBox"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="srcTree">
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text">
+           <string>Index</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tag</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Color</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Destination</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <layout class="QVBoxLayout" name="dstLayout">
+       <item>
+        <layout class="QHBoxLayout" name="dstHeaderLayout" stretch="1,0,0,0,0,0">
+         <item>
+          <widget class="QLabel" name="dstLabel">
+           <property name="text">
+            <string>Destination</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dstImportButton">
+           <property name="text">
+            <string>&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dstAddButton">
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dstDeleteButton">
+           <property name="text">
+            <string>Delete</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dstUpButton">
+           <property name="text">
+            <string>Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dstDownButton">
+           <property name="text">
+            <string>Down</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="dstTree">
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text">
+           <string>Index</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tag</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Color</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

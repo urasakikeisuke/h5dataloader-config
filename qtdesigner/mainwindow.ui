@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>H5 DataLoader Setting</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="minibatchTab">
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <attribute name="title">
+        <string>Mini Batch</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QWidget" name="verticalLayoutWidget">
+           <layout class="QVBoxLayout" name="minibatchSrcLayout">
+            <item>
+             <widget class="QLabel" name="minibatchSrcHeaderLabel">
+              <property name="text">
+               <string>in HDF5 Dataset</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSplitter" name="minibatchSrcVerticalSplitter">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QWidget" name="verticalLayoutWidget_4">
+               <layout class="QVBoxLayout" name="minibatchSrcDataLayout">
+                <item>
+                 <widget class="QLineEdit" name="minibatchSrcPathLineEdit">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTreeWidget" name="minibatchSrcDataTree">
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>Tag</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Type</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Frame ID</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget_3">
+               <layout class="QVBoxLayout" name="minibatchSrcPropertyLayout">
+                <item>
+                 <widget class="QLabel" name="minibatchSrcPropertyLabel">
+                  <property name="text">
+                   <string>Property</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTreeWidget" name="minibatchSrcPropertyTree">
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>Property</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Value</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="verticalLayoutWidget_2">
+           <layout class="QVBoxLayout" name="minibatchDstLayout">
+            <item>
+             <widget class="QLabel" name="minibatchDstHeaderLabel">
+              <property name="text">
+               <string>Mini Batch</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSplitter" name="minibatchDstVerticalSplitter">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QWidget" name="verticalLayoutWidget_5">
+               <layout class="QVBoxLayout" name="minibatchDstDataLayout">
+                <item>
+                 <layout class="QHBoxLayout" name="minibatchDstButtonLayout">
+                  <item>
+                   <widget class="QPushButton" name="addButton">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Add</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="editButton">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Edit</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="deleteButton">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Delete</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTreeWidget" name="minibatchDstDataTree">
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string notr="true">Tag</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Type</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Frame ID</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget_6">
+               <layout class="QVBoxLayout" name="minibatchDstPropertyLayout">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Property</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTreeWidget" name="minibatchDstPropertyTree">
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>Property</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Value</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="labelTab">
+       <attribute name="title">
+        <string>Label</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTabWidget" name="labelTabWidget">
+          <property name="currentIndex">
+           <number>-1</number>
+          </property>
+          <property name="tabsClosable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tfTab">
+       <attribute name="title">
+        <string>TF</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Frame ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>787</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="action_Exit"/>
+   </widget>
+   <addaction name="menu_File"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Open">
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_Exit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
