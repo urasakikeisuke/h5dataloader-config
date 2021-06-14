@@ -2,6 +2,7 @@
 
 from typing import Dict, List, Tuple, Union
 import numpy as np
+import cv2
 
 TYPE_FLOAT16:str = 'float16'
 TYPE_FLOAT32:str = 'float32'
@@ -18,6 +19,7 @@ TYPE_RGB8:str = 'rgb8'
 TYPE_BGRA8:str = 'bgra8'
 TYPE_RGBA8:str = 'rgba8'
 TYPE_DEPTH:str = 'depth'
+TYPE_DISPARITY:str = 'disparity'
 TYPE_POINTS:str = 'points'
 TYPE_VOXEL_POINTS:str = 'voxel-points'
 TYPE_SEMANTIC1D:str = 'semantic1d'
@@ -79,6 +81,7 @@ H5_ATTR_STAMPSEC:str = 'stamp.sec'
 H5_ATTR_STAMPNSEC:str = 'stamp.nsec'
 H5_ATTR_FRAMEID:str = 'frame_id'
 H5_ATTR_CHILDFRAMEID:str = 'child_frame_id'
+H5_ATTR_BASELINE:str = 'base_line'
 H5_ATTR_ARRAY:str = 'array'
 H5_ATTR_FILEPATH:str = 'file_path'
 H5_ATTR_MAPID:str = 'map_id'
@@ -105,6 +108,7 @@ DTYPE_NUMPY:Dict[str, np.dtype] = {
     TYPE_BGRA8: np.uint8,
     TYPE_RGBA8: np.uint8,
     TYPE_DEPTH: np.float32,
+    TYPE_DISPARITY: np.float32,
     TYPE_POINTS: np.float32,
     TYPE_VOXEL_POINTS: np.object,
     SUBTYPE_VOXEL_POINTS: np.dtype([('x', np.float32), ('y', np.float32), ('z',np.float32)]),
@@ -129,17 +133,18 @@ INTERPOLATION_FLAG:Dict[str, Union[int, None]] = {
     TYPE_INT16: None,
     TYPE_INT32: None,
     TYPE_INT64: None,
-    TYPE_MONO8: 1,      # cv2.INTER_LINEAR,
-    TYPE_MONO16: 1,     # cv2.INTER_LINEAR,
-    TYPE_BGR8: 1,       # cv2.INTER_LINEAR,
-    TYPE_RGB8: 1,       # cv2.INTER_LINEAR,
-    TYPE_BGRA8: 1,      # cv2.INTER_LINEAR,
-    TYPE_RGBA8: 1,      # cv2.INTER_LINEAR,
-    TYPE_DEPTH: 0,      # cv2.INTER_NEAREST,
+    TYPE_MONO8: cv2.INTER_LINEAR,
+    TYPE_MONO16: cv2.INTER_LINEAR,
+    TYPE_BGR8: cv2.INTER_LINEAR,
+    TYPE_RGB8: cv2.INTER_LINEAR,
+    TYPE_BGRA8: cv2.INTER_LINEAR,
+    TYPE_RGBA8: cv2.INTER_LINEAR,
+    TYPE_DEPTH: cv2.INTER_NEAREST,
+    TYPE_DISPARITY: None,
     TYPE_POINTS: None,
     TYPE_VOXEL_POINTS: None,
     TYPE_SEMANTIC1D: None,
-    TYPE_SEMANTIC2D: 0, # cv2.INTER_NEAREST,
+    TYPE_SEMANTIC2D: cv2.INTER_NEAREST,
     TYPE_SEMANTIC3D: None,
     TYPE_VOXEL_SEMANTIC3D: None,
     TYPE_POSE: None,
@@ -165,6 +170,7 @@ DEFAULT_RANGE:Dict[str, Tuple[Union[int, float], Union[int, float]]] = {
     TYPE_BGRA8: (np.iinfo(np.uint8).min, np.iinfo(np.uint8).max),
     TYPE_RGBA8: (np.iinfo(np.uint8).min, np.iinfo(np.uint8).max),
     TYPE_DEPTH: (0., np.inf),
+    TYPE_DISPARITY: (-np.inf, np.inf),
     TYPE_POINTS: (-np.inf, np.inf),
     TYPE_VOXEL_POINTS: (-np.inf, np.inf),
     TYPE_SEMANTIC1D: None,
@@ -194,6 +200,7 @@ ZERO_VALUE:Dict[str, Union[int, np.ndarray]] = {
     TYPE_BGRA8: np.array([0, 0, 0, 0], dtype=np.uint8),
     TYPE_RGBA8: np.array([0, 0, 0, 0], dtype=np.uint8),
     TYPE_DEPTH: 0.0,
+    TYPE_DISPARITY: 0.0,
     TYPE_POINTS: None,
     TYPE_VOXEL_POINTS: None,
     TYPE_SEMANTIC1D: None,
@@ -350,6 +357,7 @@ FROM_TYPES:Dict[str, List[List[str]]] = {
     ],
     TYPE_DEPTH: [
         [TYPE_DEPTH],
+        [TYPE_DISPARITY, TYPE_INTRINSIC],
         [TYPE_POINTS, TYPE_POSE, TYPE_INTRINSIC],
         [TYPE_VOXEL_POINTS, TYPE_POSE, TYPE_INTRINSIC],
         [TYPE_SEMANTIC3D, TYPE_POSE, TYPE_INTRINSIC],
@@ -415,6 +423,7 @@ ENABLE_NORMALIZE:Dict[str, bool] = {
     TYPE_BGRA8: True,
     TYPE_RGBA8: True,
     TYPE_DEPTH: True,
+    TYPE_DISPARITY: False,
     TYPE_POINTS: True,
     TYPE_VOXEL_POINTS: False,
     TYPE_SEMANTIC1D: False,
@@ -444,6 +453,7 @@ USE_LABEL:Dict[str, bool] = {
     TYPE_BGRA8: False,
     TYPE_RGBA8: False,
     TYPE_DEPTH: False,
+    TYPE_DISPARITY: False,
     TYPE_POINTS: False,
     TYPE_VOXEL_POINTS: False,
     TYPE_SEMANTIC1D: True,
