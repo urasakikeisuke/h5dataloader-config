@@ -13,7 +13,7 @@ setup(
     license='',
     packages=find_packages(),
     install_requires=[
-        "numpy", "h5py==2.10.0", "PySide2"
+        "wheel", "numpy", "h5py==2.10.0", "PySide2"
     ],
     entry_points={
         'console_scripts': [
