@@ -1,5 +1,16 @@
 # H5DataLoader Config
 
+## Note
+uninstall opencv
+```bash
+pip3 uninstall -y opencv-python
+```
+
+install `opencv-python-headless-4.2.0.34` instead
+```bash
+pip3 install opencv-python-headless-4.2.0.34
+```
+
 ## Install
 
 ```bash
